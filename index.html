@@ -220,22 +220,21 @@
     padding: 1.5rem;
     margin-bottom: 1rem;
     transition: border-color 0.15s;
-    cursor: pointer;
   }
 
-  .project-card:hover { border-color: var(--accent); }
+  .project-card:hover { border-color: #333; }
 
   .card-link {
     display: block;
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
   }
 
+  .card-link:hover .project-card { border-color: var(--accent); }
   .card-link:hover { text-decoration: none; }
 
-  .badge-link {
-    text-decoration: none;
-  }
+  .badge-link { text-decoration: none; }
   .badge-link:hover { opacity: 0.85; text-decoration: none; }
 
   .project-top {
@@ -595,6 +594,7 @@
     </div>
     </a>
 
+    <a class="card-link" href="https://www.youtube.com/watch?v=aLA-o2FlZec" target="_blank">
     <div class="project-card">
       <div class="project-top">
         <span class="project-title">SurveyEase</span>
@@ -609,10 +609,8 @@
         <li>Offline-first architecture with local cache and auto-sync on reconnection</li>
         <li>Decentralized data storage on Internet Computer Protocol</li>
       </ul>
-      <div class="project-links">
-        <a class="project-link" href="https://www.youtube.com/watch?v=aLA-o2FlZec" target="_blank">Demo Video ↗</a>
-      </div>
     </div>
+    </a>
   </section>
 
   <!-- FREELANCE -->
@@ -706,12 +704,13 @@
       </ul>
     </div>
 
+    <a class="card-link" href="https://www.youtube.com/playlist?list=PLUMb-MXFCBf-PhvLJxQSe8Iuapz4WqGte" target="_blank">
     <div class="project-card">
       <div class="project-top">
         <span class="project-title">App-Controlled Light (IoT)</span>
         <div class="badge-row">
           <span class="badge badge-hardware">Hardware</span>
-          <span class="badge badge-shipped">Tutorial Published</span>
+          <span class="badge badge-shipped">Tutorial Published ↗</span>
         </div>
       </div>
       <p class="project-stack">Flutter · NodeMCU · Relay Module · Arduino</p>
@@ -721,10 +720,8 @@
         <li>Arduino programming for microcontroller-relay communication</li>
         <li>YouTube tutorial series covering both software and hardware setup</li>
       </ul>
-      <div class="project-links">
-        <a class="project-link" href="https://www.youtube.com/playlist?list=PLUMb-MXFCBf-PhvLJxQSe8Iuapz4WqGte" target="_blank">YouTube Tutorial ↗</a>
-      </div>
     </div>
+    </a>
 
     <div class="project-card">
       <div class="project-top">
@@ -750,11 +747,12 @@
       <span class="section-title">AI & Research</span>
     </div>
 
+    <a class="card-link" href="https://www.health.txst.edu/cdis/research/b-r-a-i-n-lab.html" target="_blank">
     <div class="project-card">
       <div class="project-top">
-        <span class="project-title"><a href="https://www.health.txst.edu/cdis/research/b-r-a-i-n-lab.html" target="_blank" style="color:var(--text); text-decoration:none;">B.R.A.I.N Lab</a> — Real-Time VR Therapy Software</span>
+        <span class="project-title">B.R.A.I.N Lab — Real-Time VR Therapy Software</span>
         <div class="badge-row">
-          <span class="badge badge-hardware">Research</span>
+          <span class="badge badge-hardware">Research ↗</span>
         </div>
       </div>
       <p class="project-stack">Python · Vizard · OpenXR · HTC Vive Focus Vision</p>
@@ -765,12 +763,15 @@
         <li>Python + Vizard + OpenXR + HTC Vive hardware — fully integrated</li>
       </ul>
     </div>
+    </a>
 
+    <a class="card-link" href="https://youtube.com/shorts/Im-pvUBrXNI?feature=share" target="_blank">
     <div class="project-card">
       <div class="project-top">
         <span class="project-title">MediMeal</span>
         <div class="badge-row">
           <span class="badge badge-ai">AI</span>
+          <span class="badge badge-shipped">Demo ↗</span>
         </div>
       </div>
       <p class="project-stack">Flutter · Gemini LLM</p>
@@ -785,10 +786,8 @@
         <img src="assets/medimeal_2.png" style="width:30%; max-width:200px; border-radius:8px; object-fit:cover;">
         <img src="assets/medimeal_3.png" style="width:30%; max-width:200px; border-radius:8px; object-fit:cover;">
       </div>
-      <div class="project-links">
-        <a class="project-link" href="https://youtube.com/shorts/Im-pvUBrXNI?feature=share" target="_blank">Demo Video ↗</a>
-      </div>
     </div>
+    </a>
   </section>
 
   <!-- SKILLS -->
