@@ -1,1 +1,901 @@
-<h1>Sandesh Gyawali</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandesh Gyawali — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0A0A0A;
+    --bg2: #111111;
+    --bg3: #1A1A1A;
+    --border: #222222;
+    --accent: #4F8EF7;
+    --accent2: #2563EB;
+    --text: #E8E8E8;
+    --text2: #999999;
+    --text3: #555555;
+    --shipped: #16A34A;
+    --shipped-bg: #052E16;
+    --grant: #B45309;
+    --grant-bg: #1C1000;
+    --mono: 'JetBrains Mono', monospace;
+    --body: 'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    z-index: 100;
+  }
+
+  .nav-name {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text2);
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+  /* HERO */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-family: var(--mono);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 span { color: var(--accent); }
+
+  .hero-bio {
+    font-size: 16px;
+    color: var(--text2);
+    max-width: 600px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .stat { text-align: left; }
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--text3);
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: background 0.15s;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--accent2); text-decoration: none; }
+
+  .btn-outline {
+    border: 1px solid var(--border);
+    color: var(--text2);
+    background: transparent;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+  /* MAIN CONTENT */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  /* SECTION */
+  .section {
+    margin-top: 4rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  /* PROJECT CARD */
+  .project-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.15s;
+  }
+
+  .project-card:hover { border-color: #333; }
+
+  .project-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .project-title {
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .badge-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .badge-shipped { background: var(--shipped-bg); color: #4ADE80; border: 1px solid #14532D; }
+  .badge-grant { background: var(--grant-bg); color: #FCD34D; border: 1px solid #713F12; }
+  .badge-hardware { background: #0F172A; color: #7DD3FC; border: 1px solid #1E3A5F; }
+  .badge-ai { background: #130F2E; color: #A78BFA; border: 1px solid #2D1B69; }
+  .badge-open { background: #0A1628; color: #60A5FA; border: 1px solid #1E3A5F; }
+
+  .project-stack {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  .project-desc {
+    color: var(--text2);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .project-highlights {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+
+  .project-highlights li {
+    font-size: 13px;
+    color: var(--text2);
+    padding: 3px 0 3px 1.25rem;
+    position: relative;
+  }
+
+  .project-highlights li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    top: 4px;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .project-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.04em;
+  }
+
+  .project-link:hover { border-color: var(--accent); text-decoration: none; }
+
+  /* SCREENSHOT AREA */
+  .screenshot-area {
+    background: var(--bg3);
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+    padding: 1.25rem;
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .screenshot-phone {
+    width: 120px;
+    height: 220px;
+    background: var(--bg);
+    border: 1px solid #333;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text3);
+    text-align: center;
+    padding: 8px;
+    line-height: 1.4;
+  }
+
+  .screenshot-wide {
+    width: 100%;
+    height: 180px;
+    background: var(--bg);
+    border: 1px solid #333;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text3);
+    text-align: center;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-group {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+
+  .skill-group-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text2);
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  /* FREELANCE */
+  .upwork-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .upwork-stat {
+    background: var(--bg2);
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .upwork-num {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .upwork-label {
+    font-size: 11px;
+    color: var(--text3);
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text3);
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .hero-stats { gap: 1rem; }
+    .upwork-bar { grid-template-columns: repeat(2, 1fr); }
+    .project-top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">sandesh gyawali</span>
+  <ul class="nav-links">
+    <li><a href="#shipped">Shipped</a></li>
+    <li><a href="#freelance">Freelance</a></li>
+    <li><a href="#hardware">Hardware</a></li>
+    <li><a href="#ai">AI & Research</a></li>
+    <li><a href="#skills">Skills</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <p class="hero-label">Software Engineer · Austin, TX</p>
+  <h1>Sandesh<br><span>Gyawali</span></h1>
+  <p class="hero-bio">
+    MS Computer Science at Texas State University, Electronics & Communication Engineering background. 
+    I've shipped production apps to the Play Store, delivered software for clients around the world on Upwork, 
+    and currently build real-time VR therapy software as a Graduate Research Assistant. 
+    Currently learning Rust for systems and robotics work.
+  </p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">$30K+</span>
+      <span class="stat-label">Upwork earnings</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Job success</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">1,000+</span>
+      <span class="stat-label">Play Store downloads</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">4+</span>
+      <span class="stat-label">Years shipping</span>
+    </div>
+  </div>
+
+  <div class="hero-links">
+    <a class="btn btn-primary" href="https://github.com/sandeshgyw" target="_blank">GitHub ↗</a>
+    <a class="btn btn-outline" href="https://www.linkedin.com/in/sandesh-gyawali-666456199/" target="_blank">LinkedIn ↗</a>
+    <a class="btn btn-outline" href="https://www.upwork.com/freelancers/~01ad0f51a955c9c59b" target="_blank">Upwork ↗</a>
+    <a class="btn btn-outline" href="mailto:sandeshgyawali@gmail.com">Email ↗</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- SHIPPED WORK -->
+  <section class="section" id="shipped">
+    <div class="section-header">
+      <span class="section-label">01</span>
+      <span class="section-title">Shipped & Deployed</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">Entrance Hub Nepal</span>
+        <div class="badge-row">
+          <span class="badge badge-shipped">Live on Play Store</span>
+        </div>
+      </div>
+      <p class="project-stack">Flutter · Firebase · Cloud Firestore · Firebase Auth · Cloud Functions · Node.js · TypeScript</p>
+      <p class="project-desc">Production exam-simulation app for students preparing for entrance exams in Nepal. Timed model sets, performance tracking, solution review, and group chat for student discussion.</p>
+      <ul class="project-highlights">
+        <li>1,000+ downloads on Google Play Store</li>
+        <li>Reduced Firebase reads 97% — from 30,000/day to under 1,000 — through client-side caching</li>
+        <li>Diagnosed crashes using Firebase Crashlytics and released production fixes based on real user reports</li>
+      </ul>
+      <div class="screenshot-area">
+        <div class="screenshot-phone">[ Screenshot:<br>Home Screen ]</div>
+        <div class="screenshot-phone">[ Screenshot:<br>Exam View ]</div>
+        <div class="screenshot-phone">[ Screenshot:<br>Results ]</div>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://play.google.com/store/apps/details?id=com.entrancehubnepal.entrance_hub&pli=1" target="_blank">Play Store ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">Easy Nepse Calculator</span>
+        <div class="badge-row">
+          <span class="badge badge-shipped">Live on Play Store</span>
+        </div>
+      </div>
+      <p class="project-stack">Flutter · Dart</p>
+      <p class="project-desc">Financial utility app for traders on the Nepal Stock Exchange. Handles buy/sell calculations, bonus and rights share adjustments, capital gain tax based on holding period, broker commissions, SEBON fees, and DP charges.</p>
+      <ul class="project-highlights">
+        <li>Capital gain tax calculation based on holding period</li>
+        <li>No login required — fast, offline-capable</li>
+        <li>Covers all major Nepse fee structures in one app</li>
+      </ul>
+      <div class="screenshot-area">
+        <div class="screenshot-phone">[ Screenshot:<br>Calculator ]</div>
+        <div class="screenshot-phone">[ Screenshot:<br>Results ]</div>
+        <div class="screenshot-phone">[ Screenshot:<br>Tax View ]</div>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://play.google.com/store/apps/details?id=com.easynepsecalc.easy_nepse_calculator&hl=en_US" target="_blank">Play Store ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">Stacked Bar Chart</span>
+        <div class="badge-row">
+          <span class="badge badge-open">Open Source</span>
+          <span class="badge badge-shipped">130+ pub points</span>
+        </div>
+      </div>
+      <p class="project-stack">Dart · Flutter · pub.dev</p>
+      <p class="project-desc">Open-source Flutter package for customizable stacked bar chart visualizations. 130+ pub points on pub.dev — indicating strong documentation, API quality, and Flutter compatibility.</p>
+      <ul class="project-highlights">
+        <li>130+ pub points on pub.dev</li>
+        <li>40+ developers using the package</li>
+        <li>Full documentation and examples for external adoption</li>
+      </ul>
+      <div class="screenshot-area">
+        <div class="screenshot-wide">[ Screenshot: stacked bar chart rendered in a Flutter app ]</div>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://pub.dev/packages/stacked_bar_chart" target="_blank">pub.dev ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">SurveyEase</span>
+        <div class="badge-row">
+          <span class="badge badge-grant">$10K Grant</span>
+        </div>
+      </div>
+      <p class="project-stack">Motoko · Internet Computer (ICP) · Flutter · Node.js · Dart</p>
+      <p class="project-desc">Decentralized survey platform built on the Internet Computer Protocol, designed for users in low-connectivity regions. Surveys cache locally and auto-sync when connectivity returns. Received two $5,000 grants from the Dfinity Foundation.</p>
+      <ul class="project-highlights">
+        <li>Two $5,000 Dfinity Foundation developer grants</li>
+        <li>Offline-first architecture with local cache and auto-sync on reconnection</li>
+        <li>Decentralized data storage on Internet Computer Protocol</li>
+      </ul>
+      <div class="project-links">
+        <a class="project-link" href="https://www.youtube.com/watch?v=aLA-o2FlZec" target="_blank">Demo Video ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREELANCE -->
+  <section class="section" id="freelance">
+    <div class="section-header">
+      <span class="section-label">02</span>
+      <span class="section-title">Freelance — Upwork</span>
+    </div>
+
+    <div class="upwork-bar">
+      <div class="upwork-stat">
+        <span class="upwork-num">$30K+</span>
+        <span class="upwork-label">Earned</span>
+      </div>
+      <div class="upwork-stat">
+        <span class="upwork-num">15</span>
+        <span class="upwork-label">Jobs</span>
+      </div>
+      <div class="upwork-stat">
+        <span class="upwork-num">1,352</span>
+        <span class="upwork-label">Hours</span>
+      </div>
+      <div class="upwork-stat">
+        <span class="upwork-num">100%</span>
+        <span class="upwork-label">Success</span>
+      </div>
+    </div>
+
+    <div class="screenshot-area">
+      <div class="screenshot-wide">[ Screenshot: Upwork profile — stats, job success score, earnings ]</div>
+    </div>
+    <div class="project-links" style="margin-bottom: 1.5rem;">
+      <a class="project-link" href="https://www.upwork.com/freelancers/~01ad0f51a955c9c59b?mp_source=share" target="_blank">Upwork Profile ↗</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">ClassJacht — OCR + LLM Pipeline</span>
+        <div class="badge-row">
+          <span class="badge badge-ai">AI</span>
+          <span class="badge badge-shipped">Client Delivered</span>
+        </div>
+      </div>
+      <p class="project-stack">Google Cloud Vision · OpenAI API · OCR · LLM · Flutter</p>
+      <p class="project-desc">Built for a Japanese language learning client. Extracts classical Japanese text from camera images using Google Cloud Vision OCR, then generates structured modern English translations via OpenAI API with prompt guardrails.</p>
+      <ul class="project-highlights">
+        <li>Camera → OCR extraction → LLM translation pipeline end-to-end</li>
+        <li>Prompt guardrails to prevent low-quality or incorrect translations</li>
+        <li>Shipped to production for a real paying international client</li>
+      </ul>
+      <div class="screenshot-area">
+        <div class="screenshot-phone">[ Screenshot:<br>Camera input ]</div>
+        <div class="screenshot-phone">[ Screenshot:<br>Translation output ]</div>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://play.google.com/store/apps/details?id=space.tombstone.classjachtranslate&hl=en_US" target="_blank">Play Store ↗</a>
+        <a class="project-link" href="https://apps.apple.com/us/app/%E5%8F%A4%E6%96%87-%E6%BC%A2%E6%96%87%E7%BF%BB%E8%A8%B3%E3%82%AB%E3%83%A1%E3%83%A9%E3%82%A2%E3%83%97%E3%83%AA/id6502451770" target="_blank">App Store ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">Civol — Distributed File Upload System</span>
+        <div class="badge-row">
+          <span class="badge badge-shipped">Client Delivered</span>
+        </div>
+      </div>
+      <p class="project-stack">ICP · Flutter · DigitalOcean · Nginx · Vite</p>
+      <p class="project-desc">Distributed video upload system for Civol on the Internet Computer Protocol. Cut upload time 83% by splitting files into sub-2MB chunks and parallelizing transfers across multiple canisters. Platform-aware routing between mobile and web clients.</p>
+      <ul class="project-highlights">
+        <li>83% reduction in upload time — from ~2 minutes to under 20 seconds</li>
+        <li>Platform-aware: on-device processing for mobile, DigitalOcean/Nginx for web</li>
+        <li>Parallel transfers across multiple ICP canisters</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HARDWARE & ROBOTICS -->
+  <section class="section" id="hardware">
+    <div class="section-header">
+      <span class="section-label">03</span>
+      <span class="section-title">Robotics & Hardware</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">IR Pathfinder Robot</span>
+        <div class="badge-row">
+          <span class="badge badge-hardware">Hardware</span>
+        </div>
+      </div>
+      <p class="project-stack">C++ · Arduino · IR Sensors · Embedded Systems</p>
+      <p class="project-desc">Autonomous path-following robot using IR sensors and Arduino. Programmed real-time motor control and obstacle detection algorithms from scratch — no abstraction libraries for the core logic.</p>
+      <ul class="project-highlights">
+        <li>Path-following algorithm with real-time motor control in C++</li>
+        <li>Obstacle detection via IR sensor signal thresholding</li>
+        <li>Low-level hardware-software integration end-to-end</li>
+      </ul>
+      <div class="screenshot-area">
+        <div class="screenshot-wide">[ Photo: IR Pathfinder Robot ]</div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">App-Controlled Light (IoT)</span>
+        <div class="badge-row">
+          <span class="badge badge-hardware">Hardware</span>
+          <span class="badge badge-shipped">Tutorial Published</span>
+        </div>
+      </div>
+      <p class="project-stack">Flutter · NodeMCU · Relay Module · Arduino</p>
+      <p class="project-desc">Complete IoT system — Flutter mobile app + NodeMCU firmware — that controls a home light via a relay module. Covers both app development and hardware firmware end-to-end. Published as a YouTube tutorial series.</p>
+      <ul class="project-highlights">
+        <li>Full stack: Flutter app + NodeMCU firmware + relay hardware wiring</li>
+        <li>Arduino programming for microcontroller-relay communication</li>
+        <li>YouTube tutorial series covering both software and hardware setup</li>
+      </ul>
+      <div class="screenshot-area">
+        <div class="screenshot-phone">[ Screenshot:<br>App UI ]</div>
+        <div class="screenshot-wide" style="flex:1; min-width: 200px; height: 220px;">[ Photo: Hardware setup — NodeMCU + relay + light ]</div>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://www.youtube.com/playlist?list=PLUMb-MXFCBf-PhvLJxQSe8Iuapz4WqGte" target="_blank">YouTube Tutorial ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">Beacon-Based Attendance System</span>
+        <div class="badge-row">
+          <span class="badge badge-hardware">Hardware</span>
+        </div>
+      </div>
+      <p class="project-stack">C++ · NodeMCU · BLE Beacons · Embedded Systems</p>
+      <p class="project-desc">Automated attendance tracking system using BLE beacons and NodeMCU microcontrollers. Handles hardware programming, BLE signal processing, and data logging end-to-end.</p>
+      <ul class="project-highlights">
+        <li>BLE signal parsing and proximity detection logic</li>
+        <li>NodeMCU firmware in C++ for real-time beacon scanning</li>
+        <li>End-to-end hardware-software system: sensors → digital attendance record</li>
+      </ul>
+      <div class="screenshot-area">
+        <div class="screenshot-wide">[ Photo: Beacon attendance hardware setup ]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI & RESEARCH -->
+  <section class="section" id="ai">
+    <div class="section-header">
+      <span class="section-label">04</span>
+      <span class="section-title">AI & Research</span>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title"><a href="https://www.health.txst.edu/cdis/research/b-r-a-i-n-lab.html" target="_blank" style="color:var(--text); text-decoration:none;">B.R.A.I.N Lab</a> — Real-Time VR Therapy Software</span>
+        <div class="badge-row">
+          <span class="badge badge-hardware">Research</span>
+        </div>
+      </div>
+      <p class="project-stack">Python · Vizard · OpenXR · HTC Vive Focus Vision</p>
+      <p class="project-desc">Graduate Research Assistant at Texas State University's B.R.A.I.N Lab. Building real-time gaze-contingent VR software for aphasia therapy research. Translate clinical requirements from therapists into measurable software features.</p>
+      <ul class="project-highlights">
+        <li>Real-time gaze tracking: 1° fixation threshold, ±4° stimulus positioning</li>
+        <li>Reduced false fixation-break errors 75% via 3-frame tolerance logic</li>
+        <li>Python + Vizard + OpenXR + HTC Vive hardware — fully integrated</li>
+      </ul>
+      <div class="screenshot-area">
+        <div class="screenshot-wide">[ Screenshot: VR environment or gaze tracking visualization ]</div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <span class="project-title">MediMeal</span>
+        <div class="badge-row">
+          <span class="badge badge-ai">AI</span>
+        </div>
+      </div>
+      <p class="project-stack">Flutter · Gemini LLM</p>
+      <p class="project-desc">AI-powered diet suggestion app built at a hackathon. Integrates Gemini LLM to generate personalized meal recommendations based on user medications and available ingredients. Includes fallback loop logic cycling through free Gemini model tiers for zero-cost reliability.</p>
+      <ul class="project-highlights">
+        <li>Led project end-to-end from idea to working demo</li>
+        <li>Gemini LLM with custom prompt design and output guardrails</li>
+        <li>Fallback loop across free model tiers — zero infrastructure cost</li>
+      </ul>
+      <div class="screenshot-area">
+        <div class="screenshot-phone">[ Screenshot:<br>Input screen ]</div>
+        <div class="screenshot-phone">[ Screenshot:<br>Meal suggestion ]</div>
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://youtube.com/shorts/Im-pvUBrXNI?feature=share" target="_blank">Demo Video ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <span class="section-label">05</span>
+      <span class="section-title">Skills</span>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <p class="skill-group-label">Languages</p>
+        <div class="skill-tags">
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Rust (learning)</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Dart</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Robotics & Embedded</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Arduino</span>
+          <span class="skill-tag">NodeMCU</span>
+          <span class="skill-tag">IR Sensors</span>
+          <span class="skill-tag">BLE Beacons</span>
+          <span class="skill-tag">Ultrasonic (HC-SR04)</span>
+          <span class="skill-tag">PIR</span>
+          <span class="skill-tag">GPIO</span>
+          <span class="skill-tag">Relay Module</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Systems & Hardware</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">OpenXR</span>
+          <span class="skill-tag">Real-time systems</span>
+          <span class="skill-tag">Nginx</span>
+          <span class="skill-tag">Socket programming</span>
+          <span class="skill-tag">VHDL</span>
+          <span class="skill-tag">8086 Assembly</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Backend & Cloud</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">GCP</span>
+          <span class="skill-tag">DigitalOcean</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Firebase</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">Mobile & Frontend</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Flutter</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Play Store</span>
+          <span class="skill-tag">App Store</span>
+          <span class="skill-tag">Firebase Auth</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-label">AI & Data</p>
+        <div class="skill-tags">
+          <span class="skill-tag">OpenAI API</span>
+          <span class="skill-tag">Gemini LLM</span>
+          <span class="skill-tag">RAG</span>
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  sandesh gyawali · austin, tx · available full-time september 2026 ·
+  <a href="mailto:sandeshgyawali@gmail.com">sandeshgyawali@gmail.com</a>
+</footer>
+
+</body>
+</html>
